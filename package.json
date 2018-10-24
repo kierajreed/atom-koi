@@ -1,0 +1,18 @@
+{
+  "name": "atom-koi",
+  "main": "./lib/atom-koi",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "atom-koi:toggle"
+  },
+  "repository": "https://github.com/atom/atom-koi",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
