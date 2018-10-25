@@ -1,8 +1,28 @@
 fileTypes: [
-  "koi"
+  'koi'
 ]
-scopeName: "source.koi"
-name: "Koi"
+scopeName: 'source.koi'
+name: 'Koi'
 patterns: [
-
+  {
+    include: '#comments'
+  }
 ]
+repository:
+  comments:
+    patterns: [
+      {
+        name: 'comment.line'
+        match: '#[^-].+$'
+      }
+      {
+        name: 'comment.block'
+        contentName: 'comment.block'
+        begin: '#-'
+        beginCaptures:
+          0: name: 'comment.block'
+        end: '-#'
+        endCaptures:
+          0: name: 'comment.block'
+      }
+    ]
