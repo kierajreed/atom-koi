@@ -22,6 +22,9 @@ patterns: [
   {
     include: '#objects'
   }
+  {
+    include: '#strings'
+  }
 ]
 repository:
   comments:
@@ -148,12 +151,32 @@ repository:
       }
     ]
   imports:
-    patterns: [
-      {
+    patterns: [{
         match: '(core|std) (import) (([A-Za-z_][A-Za-z0-9_]+))'
         captures:
           0: name: 'entity.namespace.type.name.koi'
           2: name: 'keyword.import.koi'
           1: name: 'keyword.import.koi'
-      }
-    ]
+    }]
+  strings:
+    patterns: [{
+        begin: '"'
+        beginCaptures:
+          0:
+            name: 'punctuation.definition.string.begin.koi'
+        end: '"'
+        endCaptures:
+          0:
+            name: 'punctuation.definition.string.end.koi'
+        name: 'string.quoted.double.koi'
+        patterns: [
+          {
+            match: '\\\\n'
+            name: 'constant.character.escape.koi'
+          }
+          {
+            match: '[^"]*[^\\n\\r"\\\\]$'
+            name: 'invalid.illegal.string.koi'
+          }
+        ]
+    }]
