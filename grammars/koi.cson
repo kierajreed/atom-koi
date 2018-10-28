@@ -112,6 +112,10 @@ repository:
   symbols:
     patterns: [
       {
+        name: 'keyword.symbol.comparison.koi'
+        match: '(<|>|==|!=|<=|>=)'
+      }
+      {
         name: 'keyword.symbol.koi'
         match: '(:?=)'
       }
