@@ -1,3 +1,0 @@
-class XXXX {}
-
-function ABC() {}
