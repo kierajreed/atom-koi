@@ -16,6 +16,12 @@ patterns: [
   {
     include: '#types'
   }
+  {
+    include: '#imports'
+  }
+  {
+    include: '#objects'
+  }
 ]
 repository:
   comments:
@@ -43,7 +49,7 @@ repository:
       }
       {
         name: 'keyword.definition.koi'
-        match: '(?<!\\.)\\b(val|var)(?!\\s*:)\\b'
+        match: '(?<!\\.)\\b(const var|var)(?!\\s*:)\\b'
       }
       {
         name: 'keyword.control.koi'
@@ -54,18 +60,53 @@ repository:
         match: '(?<!\\.)\\b(break|return)(?!\\s*:)\\b'
       }
       {
-        name: 'function.koi'
-        match: '(call|fun|pro|sub) ([A-Za-z_][A-Za-z0-9_]+)'
+        name: 'keyword.class.koi'
+        match: '(?<!\\.)\\b(init|meth)(?!\\s*:)\\b'
+      }
+      {
+        match: '\\b(constructor)\\(\\)'
+        captures:
+          1: name: 'entity.function.constructor.name.koi'
+      }
+      {
+        match: '(fun|pro|sub) ([A-Za-z_][A-Za-z0-9_]+)'
         captures:
           1: name: 'keyword.function.koi'
           0: name: 'entity.function.name.koi'
       }
       {
-        name: 'class.koi'
+        comment: 'functions'
+        match: '\\b(call) ([A-Za-z_][A-Za-z0-9_]+)\\('
+        captures:
+          1: name: 'keyword.function.koi'
+          2: name: 'entity.function.name.koi'
+      }
+      {
         match: '(class|new) ([A-Za-z_][A-Za-z0-9_]+)'
         captures:
           1: name: 'keyword.class.koi'
           0: name: 'entity.class.name.koi'
+      }
+    ]
+  objects:
+    patterns: [
+      {
+        match: '(call) ([A-Za-z_][A-Za-z0-9_]+)\\.([A-Za-z_][A-Za-z0-9_]+)\\('
+        captures:
+          1: name: 'keyword.function.koi'
+          2: name: 'variable.other.property.koi'
+          3: name: 'entity.function.name.koi'
+      }
+      {
+        match: '([A-Za-z_][A-Za-z0-9_]+)\\.([A-Za-z_][A-Za-z0-9_]+)'
+        captures:
+          1: name: 'variable.other.property.koi'
+          2: name: 'variable.other.property.koi'
+      }
+      {
+        match: '\\.([A-Za-z_][A-Za-z0-9_]+)[^(]'
+        captures:
+          1: name: 'variable.other.property.koi'
       }
     ]
   symbols:
@@ -100,5 +141,15 @@ repository:
         captures:
           0: name: 'entity.type.name.koi'
           1: name: 'keyword.symbol.koi'
+      }
+    ]
+  imports:
+    patterns: [
+      {
+        match: '(core|std) (import) (([A-Za-z_][A-Za-z0-9_]+))'
+        captures:
+          0: name: 'entity.namespace.type.name.koi'
+          2: name: 'keyword.import.koi'
+          1: name: 'keyword.import.koi'
       }
     ]
