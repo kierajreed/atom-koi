@@ -75,10 +75,6 @@ repository:
         match: '(:?=)'
       }
       {
-        name: 'keyword.symbol.koi'
-        match: '(->)'
-      }
-      {
         name: 'constant.numeric.koi'
         match: '''(?x)
           (?<!\\$)(?:
@@ -93,9 +89,16 @@ repository:
   types:
     patterns: [
       {
-        match: '\\b(: ?)([A-Za-z_][A-Za-z0-9_]+)'
+        comment: 'variables/parameters'
+        match: '(: ?)([A-Za-z_][A-Za-z0-9_]+)'
         captures:
           2: name: 'entity.type.name.koi'
-          1: name: 'symbol.typedef.koi'
+      }
+      {
+        comment: 'functions/methods'
+        match: '(->) ?([A-Za-z_][A-Za-z0-9_]+)'
+        captures:
+          0: name: 'entity.type.name.koi'
+          1: name: 'keyword.symbol.koi'
       }
     ]
