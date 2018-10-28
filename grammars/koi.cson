@@ -7,6 +7,12 @@ patterns: [
   {
     include: '#comments'
   }
+  {
+    include: '#keywords'
+  }
+  {
+    include: '#symbols'
+  }
 ]
 repository:
   comments:
@@ -24,5 +30,53 @@ repository:
         end: '-#'
         endCaptures:
           0: name: 'comment.block'
+      }
+    ]
+  keywords:
+    patterns: [
+      {
+        name: 'keyword.control.koi'
+        match: '(?<!\\.)\\b(if|elf|else)(?!\\s*:)\\b'
+      }
+      {
+        name: 'keyword.definition.koi'
+        match: '(?<!\\.)\\b(val|var)(?!\\s*:)\\b'
+      }
+      {
+        name: 'keyword.control.koi'
+        match: '(?<!\\.)\\b(for|while|in|of)(?!\\s*:)\\b'
+      }
+      {
+        name: 'keyword.control.koi'
+        match: '(?<!\\.)\\b(break|return)(?!\\s*:)\\b'
+      }
+      {
+        name: 'function.koi'
+        match: '(call|fun|pro|sub) ([A-Za-z_][A-Za-z0-9_]+)'
+        captures:
+          1: name: 'keyword.function.koi'
+          0: name: 'entity.function.name.koi'
+      }
+    ]
+  symbols:
+    patterns: [
+      {
+        name: 'keyword.symbol.koi'
+        match: '(:?=)'
+      }
+      {
+        name: 'keyword.symbol.koi'
+        match: '(->)'
+      }
+      {
+        name: 'constant.numeric.koi'
+        match: '''(?x)
+          (?<!\\$)(?:
+            (?:\\b[0-9]+(\\.)[0-9]+\\b)|                # 1.1
+            (?:\\b[0-9]+(\\.)\\B)|                      # 1.
+            (?:\\B(\\.)[0-9]+\\b)|                      # .1
+            (?:\\b[0-9]+\\b(?!\\.))                     # 1
+          )(?!\\$)
+        '''
       }
     ]

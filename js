@@ -1,0 +1,3 @@
+class XXXX {}
+
+function ABC() {}
