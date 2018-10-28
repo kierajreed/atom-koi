@@ -13,6 +13,9 @@ patterns: [
   {
     include: '#symbols'
   }
+  {
+    include: '#types'
+  }
 ]
 repository:
   comments:
@@ -57,6 +60,13 @@ repository:
           1: name: 'keyword.function.koi'
           0: name: 'entity.function.name.koi'
       }
+      {
+        name: 'class.koi'
+        match: '(class|new) ([A-Za-z_][A-Za-z0-9_]+)'
+        captures:
+          1: name: 'keyword.class.koi'
+          0: name: 'entity.class.name.koi'
+      }
     ]
   symbols:
     patterns: [
@@ -78,5 +88,14 @@ repository:
             (?:\\b[0-9]+\\b(?!\\.))                     # 1
           )(?!\\$)
         '''
+      }
+    ]
+  types:
+    patterns: [
+      {
+        match: '\\b(: ?)([A-Za-z_][A-Za-z0-9_]+)'
+        captures:
+          2: name: 'entity.type.name.koi'
+          1: name: 'symbol.typedef.koi'
       }
     ]
