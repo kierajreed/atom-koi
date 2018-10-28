@@ -45,7 +45,7 @@ repository:
     patterns: [
       {
         name: 'keyword.control.koi'
-        match: '(?<!\\.)\\b(if|elf|else)(?!\\s*:)\\b'
+        match: '(?<!\\.)\\b(if|elf|else|when|is)(?!\\s*:)\\b'
       }
       {
         name: 'keyword.definition.koi'
