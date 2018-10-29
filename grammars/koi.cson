@@ -67,9 +67,13 @@ repository:
         match: '(?<!\\.)\\b(init|meth)(?!\\s*:)\\b'
       }
       {
-        match: '\\b(constructor)\\(\\)'
+        match: '\\b(constructor)\\('
         captures:
           1: name: 'entity.function.constructor.name.koi'
+      }
+      {
+        name: 'keyword.native.koi'
+        match: '(?<!\\.)\\b(native)(?!\\s*:)\\b'
       }
       {
         match: '(fun|pro|sub) ([A-Za-z_][A-Za-z0-9_]+)'
