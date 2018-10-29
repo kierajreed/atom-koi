@@ -2,17 +2,15 @@
   "name": "atom-koi",
   "main": "./lib/atom-koi",
   "version": "0.0.0",
-  "description": "A short description of your package",
-  "keywords": [
-  ],
-  "activationCommands": {
-    "atom-workspace": "atom-koi:toggle"
-  },
-  "repository": "https://github.com/atom/atom-koi",
+  "description": "Koi syntax highlighting for Atom.",
+  "keywords": [],
+  "repository": { "type": "git", "url": "git+https://github.com/atom/atom-koi.git" },
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {},
+  "bugs": { "url": "https://github.com/atom/atom-koi/issues" },
+  "homepage": "https://github.com/atom/atom-koi#readme",
+  "author": "SkyHawkB"
 }
