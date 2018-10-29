@@ -1,6 +1,6 @@
 {
-  "name": "atom-koi",
-  "main": "./lib/atom-koi",
+  "name": "language-koi",
+  "main": "./lib/index",
   "version": "0.0.0",
   "description": "Koi syntax highlighting for Atom.",
   "keywords": [],
