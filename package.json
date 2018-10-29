@@ -1,16 +1,21 @@
 {
   "name": "language-koi",
   "main": "./lib/index",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Koi syntax highlighting for Atom.",
   "keywords": [],
-  "repository": { "type": "git", "url": "git+https://github.com/SkyHawkB/atom-koi.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkyHawkB/atom-koi.git"
+  },
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {},
-  "bugs": { "url": "https://github.com/SkyHawkB/atom-koi/issues" },
+  "bugs": {
+    "url": "https://github.com/SkyHawkB/atom-koi/issues"
+  },
   "homepage": "https://github.com/SkyHawkB/atom-koi#readme",
   "author": "SkyHawkB"
 }
