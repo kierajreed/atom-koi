@@ -1,3 +1,3 @@
-# atom-Koi
+# atom-koi
 
 Koi syntax highlighting for Atom.
