@@ -1,5 +1,5 @@
 {
-  "name": "language-koi",
+  "name": "atom-koi",
   "main": "./lib/index",
   "version": "1.0.0",
   "description": "Koi syntax highlighting for Atom.",
