@@ -1,7 +1,7 @@
 {
   "name": "atom-koi",
   "main": "./lib/index",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Koi syntax highlighting for Atom.",
   "keywords": [],
   "repository": {
