@@ -94,6 +94,12 @@ repository:
           1: name: 'keyword.class.koi'
           0: name: 'entity.class.name.koi'
       }
+      {
+        match: '(enum|struct) ([A-Za-z_][A-Za-z0-9_]+)'
+        captures:
+          1: name: 'keyword.class.other.koi'
+          0: name: 'entity.class.other.name.koi'
+      }
     ]
   objects:
     patterns: [
